@@ -39,3 +39,5 @@ lib
 # IDE files
 .idea/
 *.iml
+
+package-lock.json
