@@ -33,9 +33,9 @@ declare module 'jwks-rsa' {
 
     function expressJwtSecret(options: JwksRsa.Options): ExpressJwt.SecretCallback;
 
-    function hapiJwt2Key(options: JwksRsa.Options): (decodedToken: any, callback: (err: Error, publicKey: any, key: any) => void) => void;
+    function hapiJwt2Key(options: JwksRsa.Options): (decodedToken: any, callback: (err: Error, publicKey: any, key: Jwk) => void) => void;
 
-    function hapiJwt2KeyAsync(options: JwksRsa.Options): (decodedToken: any) => Promise<{ key: any }>;
+    function hapiJwt2KeyAsync(options: JwksRsa.Options): (decodedToken: any) => Promise<{ key: Jwk }>;
 
     function koaJwtSecret(options: JwksRsa.Options): (name: string, scheme: string, options?: any) => void;
 
