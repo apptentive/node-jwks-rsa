@@ -1,5 +1,4 @@
-declare module 'jwks-rsa' {
-
+declare module "@apptentive/jwks-rsa" {
   import * as ExpressJwt from "express-jwt";
 
   function JwksRsa(options: JwksRsa.Options): JwksRsa.JwksClient;
@@ -31,13 +30,24 @@ declare module 'jwks-rsa' {
       handleSigningKeyError?(err: Error, cb: (err: Error) => void): any;
     }
 
-    function expressJwtSecret(options: JwksRsa.Options): ExpressJwt.SecretCallback;
+    function expressJwtSecret(
+      options: JwksRsa.Options
+    ): ExpressJwt.SecretCallback;
 
-    function hapiJwt2Key(options: JwksRsa.Options): (decodedToken: any, callback: (err: Error, publicKey: any, key: Jwk) => void) => void;
+    function hapiJwt2Key(
+      options: JwksRsa.Options
+    ): (
+      decodedToken: any,
+      callback: (err: Error, publicKey: any, key: Jwk) => void
+    ) => void;
 
-    function hapiJwt2KeyAsync(options: JwksRsa.Options): (decodedToken: any) => Promise<{ key: Jwk }>;
+    function hapiJwt2KeyAsync(
+      options: JwksRsa.Options
+    ): (decodedToken: any) => Promise<{ key: Jwk }>;
 
-    function koaJwtSecret(options: JwksRsa.Options): (name: string, scheme: string, options?: any) => void;
+    function koaJwtSecret(
+      options: JwksRsa.Options
+    ): (name: string, scheme: string, options?: any) => void;
 
     class ArgumentError extends Error {
       constructor(message: string);
