@@ -43,7 +43,7 @@ declare module "@apptentive/jwks-rsa" {
 
     function hapiJwt2KeyAsync(
       options: JwksRsa.Options
-    ): (decodedToken: any) => Promise<{ key: Jwk }>;
+    ): (decodedToken: any) => Promise<{ key: string }>;
 
     function koaJwtSecret(
       options: JwksRsa.Options
